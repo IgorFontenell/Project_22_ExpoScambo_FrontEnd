@@ -67,7 +67,7 @@ export default function CreatePostPage() {
                     required
                 />
                 <input
-                    type="text"
+                    type="number"
                     onChange={e => setBudget(e.target.value)}
                     placeholder="Valor máximo"
                     required

@@ -16,10 +16,13 @@ export default function ChatAllMessages({ otherUserId, otherUserPhoto, updateMes
       };
 
     function searchMessages () {
-        const request = axios.get(`${URL}/chat/${otherUserId}`, config);
-        request.then(response => {
-            setMessages(response.data)
-        });
+        if(otherUserId !== 'allChats' && otherUserId !== undefined ) {
+            console.log(otherUserId)
+            const request = axios.get(`${URL}/chat/${otherUserId}`, config);
+            request.then(response => {
+                setMessages(response.data)
+            });
+        }
     }
     
     useEffect(() => {
@@ -29,7 +32,7 @@ export default function ChatAllMessages({ otherUserId, otherUserPhoto, updateMes
 
    function RenderMessages() {
     if(messages.length === 0) {
-        return (<></>);
+        return (<div></div>);
     } else {
         const messagesRender = messages.map((object, index) => 
         <ChatMessage

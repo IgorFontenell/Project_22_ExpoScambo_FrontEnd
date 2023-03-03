@@ -102,7 +102,7 @@ const ChatBoxes = styled.div`
     display: flex;
     flex-direction: column;
     background-color: rgb(247, 247, 247);
-    margin-top: 5px;
+    margin-top: 15px;
     border: 1px solid lightgrey;
     height: 795px;
     overflow-y: scroll;
