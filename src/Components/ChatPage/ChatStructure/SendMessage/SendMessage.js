@@ -1,20 +1,20 @@
 import styled from "styled-components";
 import axios from 'axios';
 import TokenContext from '../../../../contexts/TokenContext';
-import { useNavigate } from 'react-router-dom';
-import { useState, useEffect, useContext, useCallback } from "react";
+import { useState, useContext, useCallback } from "react";
 
 
 
 export default function SendMessage({ otherUserId, setUpdateMessages, updateMessages }) {
     const [ messageSend, setMessageSend ] = useState('');
     const { token , setToken } = useContext(TokenContext);
-    const URL = 'http://localhost:4900'
+    const URL = 'https://project-22-expo-scambo-back-end.vercel.app'
     const config = {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       };
+
       const handleMessage = useCallback(async (e) => {
         e.preventDefault();
         try {

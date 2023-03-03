@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import TopLogo from "../UsefullComponents/TopLogo"
 import SideBar from "../UsefullComponents/SideBar";
-import { useState, useEffect, useContext } from "react";
+import { useEffect, useContext } from "react";
 import { useParams, useNavigate } from 'react-router-dom';
 import TokenContext from '../../contexts/TokenContext';
 import ChatStructure from "./ChatStructure/ChatStructure";
@@ -16,7 +16,7 @@ export default function ChatPage() {
     const { user } = useContext(UserContext);
     const { setPage } = useContext(PageContext);
     const navigate = useNavigate();
-    const URL = 'http://localhost:4900'
+    const URL = 'https://project-22-expo-scambo-back-end.vercel.app'
     const config = {
         headers: {
           Authorization: `Bearer ${token}`,

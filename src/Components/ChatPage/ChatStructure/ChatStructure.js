@@ -1,8 +1,6 @@
 import styled from "styled-components";
 import axios from 'axios';
-import TokenContext from '../../../contexts/TokenContext';
-import { useNavigate } from 'react-router-dom';
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import ChatAllMessages from "./RenderMessages/ChatAllMessages";
 import SendMessage from "./SendMessage/SendMessage";
 
@@ -10,9 +8,7 @@ import SendMessage from "./SendMessage/SendMessage";
 export default function ChatStructure({ otherUserId }) {
     const [ courierInfo, setCourierInfo ] = useState([]);
     const [ updateMessages, setUpdateMessages ] = useState(false);
-    const { token , setToken } = useContext(TokenContext);
-    const navigate = useNavigate();
-    const URL = 'http://localhost:4900'
+    const URL = 'https://project-22-expo-scambo-back-end.vercel.app'
    
 
     useEffect(() => {
@@ -24,8 +20,6 @@ export default function ChatStructure({ otherUserId }) {
         }
         
    }, [otherUserId]);
-
-  console.log(otherUserId)
 
 
     function RenderTopChat() {
